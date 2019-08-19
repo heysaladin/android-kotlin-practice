@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
-
 public class MainActivity extends AppCompatActivity {
 
     SQLiteDatabase db;
@@ -28,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().setTitle("Task Reminder");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.blue)));
-        list = (ListView)findViewById(R.id.commentlist);
-        floatingActionButton=(FloatingActionButton)findViewById(R.id.fab);
+        list = (ListView) findViewById(R.id.commentlist);
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,20 +37,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         mDbHelper = new DbHelper(this);
-        db= mDbHelper.getWritableDatabase();
+        db = mDbHelper.getWritableDatabase();
         final ImageView alarmImage = (ImageView) findViewById(R.id.alarmImage);
 
-        String[] from = {mDbHelper.TITLE, mDbHelper.DETAIL, mDbHelper.TYPE, mDbHelper.TIME, mDbHelper.DATE};
-        final String[] column = {mDbHelper.C_ID, mDbHelper.TITLE, mDbHelper.DETAIL, mDbHelper.TYPE, mDbHelper.TIME, mDbHelper.DATE};
-        int[] to = {R.id.title, R.id.Detail, R.id.type, R.id.time, R.id.date};
+        String[] from = {
+                mDbHelper.TITLE,
+                mDbHelper.DETAIL,
+                mDbHelper.TYPE,
+                mDbHelper.TIME,
+                mDbHelper.DATE
+        };
+        final String[] column = {
+                mDbHelper.C_ID,
+                mDbHelper.TITLE,
+                mDbHelper.DETAIL,
+                mDbHelper.TYPE,
+                mDbHelper.TIME,
+                mDbHelper.DATE
+        };
+        int[] to = {
+                R.id.title,
+                R.id.Detail,
+                R.id.type,
+                R.id.time,
+                R.id.date
+        };
 
-        final Cursor cursor = db.query(mDbHelper.TABLE_NAME, column, null, null ,null, null, null);
+        final Cursor cursor = db.query(mDbHelper.TABLE_NAME, column, null, null, null, null, null);
         final SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.list_entry, cursor, from, to, 0);
 
         list.setAdapter(adapter);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-            public void onItemClick(AdapterView<?> listView, View view, int position,
-            long id){
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView < ? > listView, View view, int position,
+                                    long id) {
                 Intent intent = new Intent(MainActivity.this, View_Note.class);
                 intent.putExtra(getString(R.string.rodId), id);
                 startActivity(intent);
@@ -76,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch(item.getItemId()) {
+        switch (item.getItemId()) {
             case R.id.action_new:
                 Intent openCreateNote = new Intent(MainActivity.this, CreateNote.class);
                 startActivity(openCreateNote);

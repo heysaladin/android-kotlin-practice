@@ -11,12 +11,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-
 public class View_Note extends AppCompatActivity {
 
     SQLiteDatabase db;
     DbHelper dbHelper;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +38,6 @@ public class View_Note extends AppCompatActivity {
                 notetype.setText(cursor.getString(cursor.getColumnIndex(dbHelper.TYPE)));
                 time.setText(cursor.getString(cursor.getColumnIndex(dbHelper.TIME)));
                 date.setText(cursor.getString(cursor.getColumnIndex(dbHelper.DATE)));
-
             }
             cursor.close();
         }
@@ -88,15 +85,16 @@ public class View_Note extends AppCompatActivity {
                                 db.close();
                                 Intent openMainActivity = new Intent(View_Note.this, MainActivity.class);
                                 startActivity(openMainActivity);
-
                             }
                         })
-                        .setNegativeButton(getString(R.string.no), null)                        //Do nothing on no
+                        .setNegativeButton(getString(R.string.no), null) //Do nothing on no
                         .show();
                 return true;
 
             default:
                 return super.onOptionsItemSelected(item);
+
         }
     }
+
 }

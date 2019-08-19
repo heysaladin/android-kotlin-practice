@@ -38,7 +38,7 @@ public class CreateNote extends AppCompatActivity {
     TimePicker pickerTime;
     TextView time;
     TextView date;
-    CheckBox checkBoxAlarm,checkboxnotify;
+    CheckBox checkBoxAlarm, checkboxnotify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,40 +68,36 @@ public class CreateNote extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mSpinner.setAdapter(adapter);
         mSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
-                    public void onItemSelected(
-                            AdapterView parent, View view, int position, long id) {
-                        if(id == 2){
-                            showToast(getString(R.string.added_alert));
-                            checkBoxAlarm.setEnabled(true);
-                        }
-                        else {
-                            checkBoxAlarm.setEnabled(false);
-                            checkBoxAlarm.setChecked(false);
-                        }
-                        if(id == 3){
-                            showToast(getString(R.string.notify));
-                            checkboxnotify.setEnabled(true);
-                        }
-                        else {
-                            checkboxnotify.setEnabled(false);
-                            checkboxnotify.setChecked(false);
-                        }
-                    }
+            public void onItemSelected(
+                    AdapterView parent, View view, int position, long id) {
+                if (id == 2) {
+                    showToast(getString(R.string.added_alert));
+                    checkBoxAlarm.setEnabled(true);
+                } else {
+                    checkBoxAlarm.setEnabled(false);
+                    checkBoxAlarm.setChecked(false);
+                }
+                if (id == 3) {
+                    showToast(getString(R.string.notify));
+                    checkboxnotify.setEnabled(true);
+                } else {
+                    checkboxnotify.setEnabled(false);
+                    checkboxnotify.setChecked(false);
+                }
+            }
 
-                    public void onNothingSelected(AdapterView parent) {
-                    }
+            public void onNothingSelected(AdapterView parent) {}
         });
 
         checkBoxAlarm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked == true){
+                if (isChecked == true) {
                     pickerDate.setVisibility(View.VISIBLE);
                     pickerTime.setVisibility(View.VISIBLE);
                     time.setVisibility(View.VISIBLE);
                     date.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     pickerDate.setVisibility(View.INVISIBLE);
                     pickerTime.setVisibility(View.INVISIBLE);
                     time.setVisibility(View.INVISIBLE);
@@ -112,13 +108,12 @@ public class CreateNote extends AppCompatActivity {
         checkboxnotify.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked == true){
+                if (isChecked == true) {
                     pickerDate.setVisibility(View.VISIBLE);
                     pickerTime.setVisibility(View.VISIBLE);
                     time.setVisibility(View.VISIBLE);
                     date.setVisibility(View.VISIBLE);
-                }
-                else{
+                } else {
                     pickerDate.setVisibility(View.INVISIBLE);
                     pickerTime.setVisibility(View.INVISIBLE);
                     time.setVisibility(View.INVISIBLE);
@@ -149,18 +144,18 @@ public class CreateNote extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch(item.getItemId()) {
+        switch (item.getItemId()) {
             case R.id.action_save:
                 String title = mTitleText.getText().toString();
                 String detail = mDescriptionText.getText().toString();
-                String type =  mSpinner.getSelectedItem().toString();
+                String type = mSpinner.getSelectedItem().toString();
                 ContentValues cv = new ContentValues();
                 cv.put(mDbHelper.TITLE, title);
                 cv.put(mDbHelper.DETAIL, detail);
                 cv.put(mDbHelper.TYPE, type);
                 cv.put(mDbHelper.TIME, getString(R.string.Not_Set));
 
-                if (checkBoxAlarm.isChecked()){
+                if (checkBoxAlarm.isChecked()) {
                     Calendar calender = Calendar.getInstance();
                     calender.clear();
                     calender.set(Calendar.MONTH, pickerDate.getMonth());
@@ -175,7 +170,7 @@ public class CreateNote extends AppCompatActivity {
                     SimpleDateFormat dateformatter = new SimpleDateFormat(getString(R.string.dateformate));
                     String dateString = dateformatter.format(new Date(calender.getTimeInMillis()));
 
-                    AlarmManager alarmMgr = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+                    AlarmManager alarmMgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                     Intent intent = new Intent(this, AlarmReceiver.class);
 
                     String alertTitle = mTitleText.getText().toString();
@@ -186,8 +181,7 @@ public class CreateNote extends AppCompatActivity {
                     alarmMgr.set(AlarmManager.RTC_WAKEUP, calender.getTimeInMillis(), pendingIntent);
                     cv.put(mDbHelper.TIME, timeString);
                     cv.put(mDbHelper.DATE, dateString);
-                }
-                else if(checkboxnotify.isChecked()){
+                } else if (checkboxnotify.isChecked()) {
                     Calendar calender = Calendar.getInstance();
                     calender.clear();
                     calender.set(Calendar.MONTH, pickerDate.getMonth());
@@ -202,11 +196,11 @@ public class CreateNote extends AppCompatActivity {
                     SimpleDateFormat dateformatter = new SimpleDateFormat(getString(R.string.dateformate));
                     String dateString = dateformatter.format(new Date(calender.getTimeInMillis()));
 
-                    AlarmManager alarmMgr = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+                    AlarmManager alarmMgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                     Intent intent = new Intent(this, NotificationManager2.class);
 
                     String alertTitle = mTitleText.getText().toString();
-                    String alertContent=mDescriptionText.getText().toString();
+                    String alertContent = mDescriptionText.getText().toString();
                     intent.putExtra(getString(R.string.alert_title), alertTitle);
                     intent.putExtra(getString(R.string.alert_content), alertContent);
 

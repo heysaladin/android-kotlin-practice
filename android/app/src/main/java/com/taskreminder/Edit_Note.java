@@ -27,7 +27,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-
 public class Edit_Note extends AppCompatActivity {
 
     SQLiteDatabase db;
@@ -39,7 +38,7 @@ public class Edit_Note extends AppCompatActivity {
     TimePicker pickerTime;
     TextView time;
     TextView date;
-    CheckBox checkBoxAlarm,checkboxnotify;
+    CheckBox checkBoxAlarm, checkboxnotify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,16 +70,14 @@ public class Edit_Note extends AppCompatActivity {
                         if (id == 2) {
                             showToast(getString(R.string.alarm_active));
                             checkBoxAlarm.setEnabled(true);
-                        }
-                        else {
+                        } else {
                             checkBoxAlarm.setEnabled(false);
                             checkBoxAlarm.setChecked(false);
                         }
                         if (id == 3) {
                             showToast(getString(R.string.alarm_active));
                             checkboxnotify.setEnabled(true);
-                        }
-                        else {
+                        } else {
                             checkboxnotify.setEnabled(false);
                             checkboxnotify.setChecked(false);
                         }
@@ -97,7 +94,7 @@ public class Edit_Note extends AppCompatActivity {
             if (cursor.moveToFirst()) {
                 mTitleText.setText(cursor.getString(cursor.getColumnIndex(mDbHelper.TITLE)));
                 mDescriptionText.setText(cursor.getString(cursor.getColumnIndex(mDbHelper.DETAIL)));
-                if (cursor.getString(cursor.getColumnIndex(mDbHelper.TYPE)).equals(mSpinner.getItemAtPosition(0))){
+                if (cursor.getString(cursor.getColumnIndex(mDbHelper.TYPE)).equals(mSpinner.getItemAtPosition(0))) {
                     mSpinner.setSelection(0);
                     checkBoxAlarm.setChecked(false);
                     checkBoxAlarm.setEnabled(false);
@@ -107,8 +104,7 @@ public class Edit_Note extends AppCompatActivity {
                     pickerTime.setVisibility(View.INVISIBLE);
                     time.setVisibility(View.INVISIBLE);
                     date.setVisibility(View.INVISIBLE);
-                }
-                else if (cursor.getString(cursor.getColumnIndex(mDbHelper.TYPE)).equals(mSpinner.getItemAtPosition(1))){
+                } else if (cursor.getString(cursor.getColumnIndex(mDbHelper.TYPE)).equals(mSpinner.getItemAtPosition(1))) {
                     mSpinner.setSelection(1);
                     checkBoxAlarm.setChecked(false);
                     checkBoxAlarm.setEnabled(false);
@@ -118,14 +114,12 @@ public class Edit_Note extends AppCompatActivity {
                     pickerTime.setVisibility(View.INVISIBLE);
                     time.setVisibility(View.INVISIBLE);
                     date.setVisibility(View.INVISIBLE);
-                }
-                else if (cursor.getString(cursor.getColumnIndex(mDbHelper.TYPE)).equals(mSpinner.getItemAtPosition(2))) {
+                } else if (cursor.getString(cursor.getColumnIndex(mDbHelper.TYPE)).equals(mSpinner.getItemAtPosition(2))) {
                     mSpinner.setSelection(2);
                     checkBoxAlarm.setChecked(true);
                     checkBoxAlarm.setEnabled(true);
 
-                }
-                else if (cursor.getString(cursor.getColumnIndex(mDbHelper.TYPE)).equals(mSpinner.getItemAtPosition(3))) {
+                } else if (cursor.getString(cursor.getColumnIndex(mDbHelper.TYPE)).equals(mSpinner.getItemAtPosition(3))) {
                     mSpinner.setSelection(3);
                     checkboxnotify.setChecked(true);
                     checkboxnotify.setEnabled(true);
@@ -138,16 +132,10 @@ public class Edit_Note extends AppCompatActivity {
                     pickerTime.setVisibility(View.INVISIBLE);
                     time.setVisibility(View.INVISIBLE);
                     date.setVisibility(View.INVISIBLE);
-
                 }
-
-
             }
             cursor.close();
         }
-
-
-
 
         checkBoxAlarm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -220,7 +208,7 @@ public class Edit_Note extends AppCompatActivity {
                 cv.put(mDbHelper.TIME, getString(R.string.Not_Set));
                 cv.putNull(mDbHelper.DATE);
 
-                if (checkBoxAlarm.isChecked()){
+                if (checkBoxAlarm.isChecked()) {
                     Calendar calender = Calendar.getInstance();
                     calender.clear();
                     calender.set(Calendar.MONTH, pickerDate.getMonth());
@@ -236,7 +224,7 @@ public class Edit_Note extends AppCompatActivity {
                     String dateString = dateformatter.format(new Date(calender.getTimeInMillis()));
 
 
-                    AlarmManager alarmMgr = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+                    AlarmManager alarmMgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                     Intent intent = new Intent(this, AlarmReceiver.class);
 
                     String alertTitle = mTitleText.getText().toString();
@@ -247,9 +235,7 @@ public class Edit_Note extends AppCompatActivity {
                     cv.put(mDbHelper.TIME, timeString);
                     cv.put(mDbHelper.DATE, dateString);
 
-                }
-                else if(checkboxnotify.isChecked())
-                {
+                } else if (checkboxnotify.isChecked()) {
                     Calendar calender = Calendar.getInstance();
                     calender.clear();
                     calender.set(Calendar.MONTH, pickerDate.getMonth());
@@ -264,12 +250,11 @@ public class Edit_Note extends AppCompatActivity {
                     SimpleDateFormat dateformatter = new SimpleDateFormat(getString(R.string.dateformate));
                     String dateString = dateformatter.format(new Date(calender.getTimeInMillis()));
 
-
-                    AlarmManager alarmMgr = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+                    AlarmManager alarmMgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                     Intent intent = new Intent(this, NotificationManager2.class);
 
                     String alertTitle = mTitleText.getText().toString();
-                    String content=mDescriptionText.getText().toString();
+                    String content = mDescriptionText.getText().toString();
                     intent.putExtra(getString(R.string.alert_title), alertTitle);
                     intent.putExtra(getString(R.string.alert_content), content);
 
@@ -290,4 +275,5 @@ public class Edit_Note extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 }
