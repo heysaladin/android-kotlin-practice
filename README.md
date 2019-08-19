@@ -1,2 +1,2 @@
-# android-kotlin-practice
-Android Kotlin Practice
+# DIPUJA
+Task Reminder Application
