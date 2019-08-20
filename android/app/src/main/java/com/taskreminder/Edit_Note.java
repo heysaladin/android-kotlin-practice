@@ -229,6 +229,7 @@ public class Edit_Note extends AppCompatActivity {
 
                     String alertTitle = mTitleText.getText().toString();
                     intent.putExtra(getString(R.string.alert_title), alertTitle);
+                    intent.putExtra("message", mDescriptionText.getText().toString());
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
 
                     alarmMgr.set(AlarmManager.RTC_WAKEUP, calender.getTimeInMillis(), pendingIntent);

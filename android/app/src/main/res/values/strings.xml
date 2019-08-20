@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <resources>
-    <string name="app_name">Task Reminder</string>
+    <string name="app_name">DIPUJA</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_create_note">Create Note</string>
@@ -61,4 +61,18 @@
     <string name="title_msg">title</string>
     <string name="titttle">title</string>
     <string name="alert_content">alert_content</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+
+    <!--<string name="app_name">Broadcast Tutorial</string>-->
+    <!--<string name="hello_world">Hello world!</string>-->
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Broadcast Tutorial</string>
+    <string name="notificationtitle">Broadcast Tutorial</string>
+    <string name="lbltitle">"Title : "</string>
+    <string name="lbltext">"Text : "</string>
+    <string name="BroadcastReceiver">Broadcast Receiver</string>
+    <string name="wifioff">WIFI OFF</string>
+    <string name="wifion">WIFI ON</string>
+
 </resources>

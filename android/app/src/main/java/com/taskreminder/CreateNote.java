@@ -175,6 +175,7 @@ public class CreateNote extends AppCompatActivity {
 
                     String alertTitle = mTitleText.getText().toString();
                     intent.putExtra(getString(R.string.alert_title), alertTitle);
+                    intent.putExtra("message", mDescriptionText.getText().toString());
 
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
 
@@ -209,6 +210,8 @@ public class CreateNote extends AppCompatActivity {
                     alarmMgr.set(AlarmManager.RTC_WAKEUP, calender.getTimeInMillis(), pendingIntent);
                     cv.put(mDbHelper.TIME, timeString);
                     cv.put(mDbHelper.DATE, dateString);
+
+
                 }
                 db.insert(mDbHelper.TABLE_NAME, null, cv);
 
