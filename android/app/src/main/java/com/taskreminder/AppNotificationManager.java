@@ -99,7 +99,9 @@ public class AppNotificationManager {
                 PendingIntent.FLAG_UPDATE_CURRENT);
 
         final Intent detailCityIntent = new Intent(mContext, MainActivity.class);
-        detailCityIntent.putExtra("CITY_ID", 1);
+        //detailCityIntent.putExtra("CITY_ID", 1);
+//        detailCityIntent.putExtra(mContext.getString(R.string.rodId), id);
+        //intent.putExtra(getString(R.string.rodId), id);
 
         PendingIntent detailPendingIntent = PendingIntent.getActivity(
                 mContext,
@@ -109,7 +111,8 @@ public class AppNotificationManager {
 
         final NotificationCompat.Action allCitiesAction = new NotificationCompat.Action(
                 R.drawable.ic_action_alarms,
-                mContext.getString(R.string.app_name),
+                //mContext.getString(R.string.app_name),
+                "View All Activities",
                 allCitiesPendingIntent);
 
         final Notification notification = createCustomNotification(

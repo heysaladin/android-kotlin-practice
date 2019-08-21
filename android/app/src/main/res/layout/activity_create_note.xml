@@ -163,6 +163,20 @@
                     android:layout_margin="5dp"
                     android:layout_gravity="center_horizontal" />
             </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/txt_time"
+                android:gravity="center"
+                android:textColor="@color/blue"
+                android:id="@+id/txtTimeEnd" />
+            <TimePicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/timePickerEnd"
+                android:layout_margin="5dp"
+                android:layout_gravity="center_horizontal" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

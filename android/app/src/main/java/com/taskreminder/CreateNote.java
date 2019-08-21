@@ -36,7 +36,9 @@ public class CreateNote extends AppCompatActivity {
     Spinner mSpinner;
     DatePicker pickerDate;
     TimePicker pickerTime;
+    TimePicker pickerTimeEnd;
     TextView time;
+    TextView timeEnd;
     TextView date;
     CheckBox checkBoxAlarm, checkboxnotify;
 
@@ -52,7 +54,9 @@ public class CreateNote extends AppCompatActivity {
         mSpinner = (Spinner) findViewById(R.id.spinnerNoteType);
         pickerDate = (DatePicker) findViewById(R.id.datePicker);
         pickerTime = (TimePicker) findViewById(R.id.timePicker);
+        pickerTimeEnd = (TimePicker) findViewById(R.id.timePickerEnd);
         time = (TextView) findViewById(R.id.txtTime);
+        timeEnd = (TextView) findViewById(R.id.txtTimeEnd);
         date = (TextView) findViewById(R.id.txtDate);
         checkBoxAlarm = (CheckBox) findViewById(R.id.checkBox);
         checkboxnotify = (CheckBox) findViewById(R.id.checkBox2);
@@ -60,6 +64,7 @@ public class CreateNote extends AppCompatActivity {
 
         pickerDate.setVisibility(View.INVISIBLE);
         pickerTime.setVisibility(View.INVISIBLE);
+        pickerTimeEnd.setVisibility(View.INVISIBLE);
         time.setVisibility(View.INVISIBLE);
         date.setVisibility(View.INVISIBLE);
 
@@ -95,11 +100,13 @@ public class CreateNote extends AppCompatActivity {
                 if (isChecked == true) {
                     pickerDate.setVisibility(View.VISIBLE);
                     pickerTime.setVisibility(View.VISIBLE);
+                    pickerTimeEnd.setVisibility(View.VISIBLE);
                     time.setVisibility(View.VISIBLE);
                     date.setVisibility(View.VISIBLE);
                 } else {
                     pickerDate.setVisibility(View.INVISIBLE);
                     pickerTime.setVisibility(View.INVISIBLE);
+                    pickerTimeEnd.setVisibility(View.INVISIBLE);
                     time.setVisibility(View.INVISIBLE);
                     date.setVisibility(View.INVISIBLE);
                 }
@@ -111,11 +118,13 @@ public class CreateNote extends AppCompatActivity {
                 if (isChecked == true) {
                     pickerDate.setVisibility(View.VISIBLE);
                     pickerTime.setVisibility(View.VISIBLE);
+                    pickerTimeEnd.setVisibility(View.VISIBLE);
                     time.setVisibility(View.VISIBLE);
                     date.setVisibility(View.VISIBLE);
                 } else {
                     pickerDate.setVisibility(View.INVISIBLE);
                     pickerTime.setVisibility(View.INVISIBLE);
+                    pickerTimeEnd.setVisibility(View.INVISIBLE);
                     time.setVisibility(View.INVISIBLE);
                     date.setVisibility(View.INVISIBLE);
                 }
@@ -150,10 +159,25 @@ public class CreateNote extends AppCompatActivity {
                 String detail = mDescriptionText.getText().toString();
                 String type = mSpinner.getSelectedItem().toString();
                 ContentValues cv = new ContentValues();
+//                ContentValues cvEnd = new ContentValues();
                 cv.put(mDbHelper.TITLE, title);
                 cv.put(mDbHelper.DETAIL, detail);
                 cv.put(mDbHelper.TYPE, type);
                 cv.put(mDbHelper.TIME, getString(R.string.Not_Set));
+
+//                Calendar calenderGeneral = Calendar.getInstance();
+//                calenderGeneral.clear();
+//                calenderGeneral.set(Calendar.MONTH, pickerDate.getMonth());
+//                calenderGeneral.set(Calendar.DAY_OF_MONTH, pickerDate.getDayOfMonth());
+//                calenderGeneral.set(Calendar.YEAR, pickerDate.getYear());
+//                calenderGeneral.set(Calendar.HOUR, pickerTime.getCurrentHour());
+//                calenderGeneral.set(Calendar.MINUTE, pickerTime.getCurrentMinute());
+//                calenderGeneral.set(Calendar.SECOND, 00);
+//
+//                AlarmManager alarmMgrGeneral = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+//                Intent intentGeneral = new Intent(this, ActivityReceiverx.class);
+//                PendingIntent pendingIntentGeneral = PendingIntent.getBroadcast(this, 0, intentGeneral, 0);
+//                alarmMgrGeneral.set(AlarmManager.RTC_WAKEUP, calenderGeneral.getTimeInMillis(), pendingIntentGeneral);
 
                 if (checkBoxAlarm.isChecked()) {
                     Calendar calender = Calendar.getInstance();
@@ -179,9 +203,43 @@ public class CreateNote extends AppCompatActivity {
 
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
 
-                    alarmMgr.set(AlarmManager.RTC_WAKEUP, calender.getTimeInMillis(), pendingIntent);
+                    alarmMgr.set(AlarmManager.RTC, calender.getTimeInMillis(), pendingIntent);
                     cv.put(mDbHelper.TIME, timeString);
                     cv.put(mDbHelper.DATE, dateString);
+
+
+
+                    Calendar calenderEnd = Calendar.getInstance();
+                    calenderEnd.clear();
+                    calenderEnd.set(Calendar.MONTH, pickerDate.getMonth());
+                    calenderEnd.set(Calendar.DAY_OF_MONTH, pickerDate.getDayOfMonth());
+                    calenderEnd.set(Calendar.YEAR, pickerDate.getYear());
+                    calenderEnd.set(Calendar.HOUR, pickerTimeEnd.getCurrentHour());
+                    calenderEnd.set(Calendar.MINUTE, pickerTimeEnd.getCurrentMinute());
+                    calenderEnd.set(Calendar.SECOND, 00);
+
+                    SimpleDateFormat formatterEnd = new SimpleDateFormat(getString(R.string.hour_minutes));
+                    String timeStringEnd = formatterEnd.format(new Date(calenderEnd.getTimeInMillis()));
+                    SimpleDateFormat dateformatterEnd = new SimpleDateFormat(getString(R.string.dateformate));
+                    String dateStringEnd = dateformatterEnd.format(new Date(calenderEnd.getTimeInMillis()));
+
+                    AlarmManager alarmMgrEnd = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                    Intent intentEnd = new Intent(this, AlarmReceiver.class);
+
+                    String alertTitleEnd = mTitleText.getText().toString();
+                    intentEnd.putExtra(getString(R.string.alert_title), alertTitleEnd);
+                    intentEnd.putExtra("message", mDescriptionText.getText().toString());
+//                    intentEnd.putExtra(getString(R.string.rodId), mDescriptionText.getText().toString());
+
+                    PendingIntent pendingIntentEnd = PendingIntent.getBroadcast(this, 0, intentEnd, 0);
+
+                    alarmMgrEnd.set(AlarmManager.RTC, calender.getTimeInMillis(), pendingIntentEnd);
+                    cv.put(mDbHelper.TIME_END, timeStringEnd);
+//                    cvEnd.put(mDbHelper.DATE, dateStringEnd);
+
+
+
+
                 } else if (checkboxnotify.isChecked()) {
                     Calendar calender = Calendar.getInstance();
                     calender.clear();
@@ -204,12 +262,44 @@ public class CreateNote extends AppCompatActivity {
                     String alertContent = mDescriptionText.getText().toString();
                     intent.putExtra(getString(R.string.alert_title), alertTitle);
                     intent.putExtra(getString(R.string.alert_content), alertContent);
+                    intent.putExtra("message", mDescriptionText.getText().toString());
 
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
 
-                    alarmMgr.set(AlarmManager.RTC_WAKEUP, calender.getTimeInMillis(), pendingIntent);
+                    alarmMgr.set(AlarmManager.RTC, calender.getTimeInMillis(), pendingIntent);
                     cv.put(mDbHelper.TIME, timeString);
                     cv.put(mDbHelper.DATE, dateString);
+
+
+
+                    Calendar calenderEnd = Calendar.getInstance();
+                    calenderEnd.clear();
+                    calenderEnd.set(Calendar.MONTH, pickerDate.getMonth());
+                    calenderEnd.set(Calendar.DAY_OF_MONTH, pickerDate.getDayOfMonth());
+                    calenderEnd.set(Calendar.YEAR, pickerDate.getYear());
+                    calenderEnd.set(Calendar.HOUR, pickerTimeEnd.getCurrentHour());
+                    calenderEnd.set(Calendar.MINUTE, pickerTimeEnd.getCurrentMinute());
+                    calenderEnd.set(Calendar.SECOND, 00);
+
+                    SimpleDateFormat formatterEnd = new SimpleDateFormat(getString(R.string.hour_minutes));
+                    String timeStringEnd = formatterEnd.format(new Date(calenderEnd.getTimeInMillis()));
+                    SimpleDateFormat dateformatterEnd = new SimpleDateFormat(getString(R.string.dateformate));
+                    String dateStringEnd = dateformatterEnd.format(new Date(calenderEnd.getTimeInMillis()));
+
+                    AlarmManager alarmMgrEnd = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                    Intent intentEnd = new Intent(this, NotificationManager2.class);
+
+                    String alertTitleEnd = mTitleText.getText().toString();
+                    String alertContentEnd = mDescriptionText.getText().toString();
+                    intentEnd.putExtra(getString(R.string.alert_title), alertTitleEnd);
+                    intentEnd.putExtra(getString(R.string.alert_content), alertContentEnd);
+                    intentEnd.putExtra("message", mDescriptionText.getText().toString());
+
+                    PendingIntent pendingIntentEnd = PendingIntent.getBroadcast(this, 0, intentEnd, 0);
+
+                    alarmMgrEnd.set(AlarmManager.RTC, calender.getTimeInMillis(), pendingIntentEnd);
+                    cv.put(mDbHelper.TIME_END, timeStringEnd);
+//                    cv.put(mDbHelper.DATE, dateStringEnd);
 
 
                 }

@@ -29,14 +29,26 @@
             android:orientation="vertical"
             android:layout_width="20dp"
             android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="20dp"
+                android:layout_height="13dp"
+                android:layout_marginTop="5dp">
             <View
                 android:layout_width="13dp"
                 android:layout_height="13dp"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
-                android:layout_marginTop="5dp"
+                android:background="@drawable/circle_shape_white_half"
+                />
+            <View
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="3dp"
                 android:background="@drawable/circle_shape_white"
                 />
+            </RelativeLayout>
             <View
                 android:background="#ffffff"
                 android:layout_width="1dp"
@@ -45,11 +57,12 @@
                 android:layout_height="match_parent"
                 />
         </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <LinearLayout
+                android:layout_alignParentTop="true"
+                android:id="@+id/active_time_block_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -69,14 +82,18 @@
                     />
             </LinearLayout>
             <TextView
+                android:layout_below="@+id/active_time_block_ll"
+                android:id="@+id/active_title_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hands-on React Hook, Just Coding, No Case Study (Series)"
+                android:text=""
                 android:textStyle="bold"
                 android:textColor="#ffffff"
                 android:textSize="28dp"
                 />
             <LinearLayout
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="13dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -97,7 +114,7 @@
                     android:textSize="50dp"
                     />
             </LinearLayout>
-        </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -115,6 +132,7 @@
             android:tint="#ffffff"
             />
         <TextView
+            android:id="@+id/weather_location_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="27 C - Denpasar"

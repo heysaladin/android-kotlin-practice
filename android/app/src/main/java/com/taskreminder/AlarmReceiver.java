@@ -21,15 +21,24 @@ import android.util.Log;
 import android.widget.Toast;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
+//import static com.taskreminder.AppUtils.activeTitle;
 
 public class AlarmReceiver extends BroadcastReceiver {
+//
+//    private AppNotificationManager mNotificationManager;
 
-    private AppNotificationManager mNotificationManager;
+
+//    MainActivity ma; //a reference to activity's context
+//
+//    public AlarmReceiver(MainActivity maContext){
+//        ma=maContext;
+//    }
+
 
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        mNotificationManager = new AppNotificationManager(context);
+//        mNotificationManager = new AppNotificationManager(context);
 
 //        final AppNotificationManager notificationManager = new AppNotificationManager(context);
 //        notificationManager.hideNotification(context);
@@ -167,16 +176,39 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         //Log.d("REDEIVER", context.getString(R.string.Alertnotifty) + intent.getStringExtra("title") );
 
-//        String Title = intent.getStringExtra(context.getString(R.string.titttle));
-//        Intent x = new Intent(context, Alert.class);
-//        x.putExtra(context.getString(R.string.titttle), Title);
-//        x.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        context.startActivity(x);
 
-        String title = intent.getStringExtra(context.getString(R.string.titttle));
-        String message = intent.getStringExtra("message");
 
-        mNotificationManager.showDetailsNotificationWithAllCitiesAction(title, message);
+//        String title = intent.getStringExtra(context.getString(R.string.titttle));
+//        ma.setActive("12:00", "12:30", title);
+
+
+        String Title = intent.getStringExtra(context.getString(R.string.titttle));
+
+//        ma.setActive("12:00", "12:30", Title);
+
+//        activeTitle = Title;
+
+
+        // other things done here like notification
+
+        // NUPDATE TEXTV1 IN MAINACTIVITY HERE
+//        listener.doSomething("Some Result");
+
+//        AppUtils.changeActive(context, Title);
+
+//        MainActivity.activeTitleText = Title;
+
+
+        Intent x = new Intent(context, Alert.class);
+        x.putExtra(context.getString(R.string.titttle), Title);
+        x.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(x);
+
+
+//        String title = intent.getStringExtra(context.getString(R.string.titttle));
+//        String message = intent.getStringExtra("message");
+//
+//        mNotificationManager.showDetailsNotificationWithAllCitiesAction(title, message);
 
     }
 

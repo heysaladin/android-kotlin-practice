@@ -14,6 +14,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String DETAIL = "description";
     public static final String TIME = "time";
     public static final String DATE = "date";
+    public static final String TIME_END = "time_end";
     public static final int VERSION = 2;
 
     private final String createDB = "create table if not exists " + TABLE_NAME + " ( " +
@@ -22,7 +23,8 @@ public class DbHelper extends SQLiteOpenHelper {
             DETAIL + " text, " +
             TYPE + " text, " +
             TIME + " text, " +
-            DATE + " text)";
+            DATE + " text, " +
+            TIME_END + " text)";
 
     public DbHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
