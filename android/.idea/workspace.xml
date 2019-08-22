@@ -11,22 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3d5aa36-d306-420e-8725-775033343d15" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/AppUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/ReadCalendar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/Utility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/AlarmReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/AlarmReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/AppNotificationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/AppNotificationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/CreateNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/CreateNote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/DbHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/DbHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/Edit_Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/Edit_Note.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/NotificationManager2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/taskreminder/NotificationManager2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_create_note.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_create_note.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit__note.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit__note.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_entry.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_entry.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/showcase.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/showcase.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,90 +33,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="72" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/NotificationManager2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="66" selection-start-line="66" selection-end-line="66" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#287#319#0" expanded="true" />
-                <element signature="e#1562#1597#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/DbHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="50" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/CreateNote.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="305" column="23" selection-start-line="305" selection-start-column="23" selection-end-line="305" selection-end-column="23" />
+            <state relative-caret-position="193">
+              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5109#5110#0" expanded="true" />
-                <element signature="e#5177#5178#0" expanded="true" />
-                <element signature="e#6561#6588#0" expanded="true" />
-                <element signature="e#8241#8273#0" expanded="true" />
-                <element signature="e#8446#8477#0" expanded="true" />
-                <element signature="e#9966#9998#0" expanded="true" />
-                <element signature="e#10183#10214#0" expanded="true" />
-                <element signature="e#10624#10655#0" expanded="true" />
-                <element signature="e#9164#9195#0" expanded="true" />
-                <element signature="e#9246#9279#0" expanded="true" />
-                <element signature="e#13708#13740#0" expanded="true" />
-                <element signature="e#13925#13956#0" expanded="true" />
-                <element signature="e#14457#14488#0" expanded="true" />
-                <element signature="e#14545#14578#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/database/sqlite/SQLiteDatabase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2547">
-              <caret line="1340" column="16" selection-start-line="1340" selection-start-column="16" selection-end-line="1340" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/Edit_Note.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-803">
-              <caret line="225" column="9" selection-start-line="225" selection-start-column="9" selection-end-line="225" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#12140#12172#0" expanded="true" />
-                <element signature="e#12357#12388#0" expanded="true" />
-                <element signature="e#12799#12830#0" expanded="true" />
-                <element signature="e#17508#17540#0" expanded="true" />
-                <element signature="e#17713#17744#0" expanded="true" />
-                <element signature="e#18216#18247#0" expanded="true" />
-                <element signature="e#18298#18331#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,14 +47,58 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1467">
-              <caret line="344" column="6" selection-start-line="344" selection-start-column="6" selection-end-line="344" selection-end-column="6" />
+            <state relative-caret-position="447">
+              <caret line="419" column="62" selection-start-line="419" selection-start-column="62" selection-end-line="419" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#16821#17204#0" expanded="true" />
-                <element signature="e#17109#17134#0" expanded="true" />
-                <element signature="e#17203#17204#0" expanded="true" />
-                <element signature="e#27993#27994#0" expanded="true" />
+                <element signature="e#31466#31467#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/provider/CalendarContract.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="157" column="31" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/Utility.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="58" column="66" selection-start-line="55" selection-start-column="11" selection-end-line="58" selection-end-column="66" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#113#121#0" expanded="true" />
+                <element signature="e#187#195#0" expanded="true" />
+                <element signature="e#259#267#0" expanded="true" />
+                <element signature="e#335#343#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/view/View.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="478">
+              <caret line="26487" selection-start-line="26487" selection-end-line="26487" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/ReadCalendar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#669#677#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,7 +107,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="476">
               <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
             </state>
           </provider>
@@ -163,7 +117,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/content/AsyncQueryHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
+            <state relative-caret-position="1683">
               <caret line="123" column="44" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="44" />
             </state>
           </provider>
@@ -172,7 +126,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/AppNotificationManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1418">
+            <state relative-caret-position="1547">
               <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -186,14 +140,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>set(Ala</find>
       <find>fab</find>
       <find>float</find>
       <find>AlarmMana</find>
@@ -223,6 +176,7 @@
       <find>db</find>
       <find>AsyncQueryHandler</find>
       <find>rod</find>
+      <find>moveToNext</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -273,7 +227,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/taskreminder/NotificationManager2.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/taskreminder/ReadCalendar.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/taskreminder/Utility.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/taskreminder/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/taskreminder/CalendarProvider.java" />
       </list>
     </option>
   </component>
@@ -511,7 +468,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16207276" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16207276" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -521,11 +478,11 @@
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="0" sideWeight="0.49889746" weight="0.32978722" />
       <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49889746" weight="0.32978722" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="2" sideWeight="0.49614114" visible="true" weight="0.3319149" />
+      <window_info anchor="bottom" id="Logcat" order="2" sideWeight="0.49614114" visible="true" weight="0.3319149" />
       <window_info anchor="bottom" id="TODO" order="3" />
       <window_info anchor="bottom" id="Android Profiler" order="4" />
       <window_info anchor="bottom" id="Debug" order="5" />
-      <window_info anchor="bottom" id="Terminal" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="6" weight="0.32978722" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50385886" side_tool="true" weight="0.32978722" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
@@ -541,48 +498,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gradlew">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_alert.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#227#262#0" expanded="true" />
-            <element signature="e#288#323#0" expanded="true" />
-            <element signature="e#347#380#0" expanded="true" />
-            <element signature="e#407#440#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_view_note.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
-          <folding>
-            <element signature="e#1119#1139#0" expanded="true" />
-            <element signature="e#1723#1744#0" expanded="true" />
-            <element signature="e#2656#2680#0" expanded="true" />
-            <element signature="e#3105#3124#0" expanded="true" />
-            <element signature="e#4184#4203#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v24/shawdowed_dropdown.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -797,18 +712,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/ActivityReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="42" lean-forward="true" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-          <folding>
-            <element signature="e#296#297#0" expanded="true" />
-            <element signature="e#324#325#0" expanded="true" />
-            <element signature="e#1041#1076#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/ActivityReceiver.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/showcase.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -834,13 +738,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/MyBroadcastListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/MyBroadcastListener.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/AlarmReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -853,86 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/AppNotificationManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1418">
-          <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/Edit_Note.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-803">
-          <caret line="225" column="9" selection-start-line="225" selection-start-column="9" selection-end-line="225" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#12140#12172#0" expanded="true" />
-            <element signature="e#12357#12388#0" expanded="true" />
-            <element signature="e#12799#12830#0" expanded="true" />
-            <element signature="e#17508#17540#0" expanded="true" />
-            <element signature="e#17713#17744#0" expanded="true" />
-            <element signature="e#18216#18247#0" expanded="true" />
-            <element signature="e#18298#18331#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/CreateNote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="305" column="23" selection-start-line="305" selection-start-column="23" selection-end-line="305" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5109#5110#0" expanded="true" />
-            <element signature="e#5177#5178#0" expanded="true" />
-            <element signature="e#6561#6588#0" expanded="true" />
-            <element signature="e#8241#8273#0" expanded="true" />
-            <element signature="e#8446#8477#0" expanded="true" />
-            <element signature="e#9966#9998#0" expanded="true" />
-            <element signature="e#10183#10214#0" expanded="true" />
-            <element signature="e#10624#10655#0" expanded="true" />
-            <element signature="e#9164#9195#0" expanded="true" />
-            <element signature="e#9246#9279#0" expanded="true" />
-            <element signature="e#13708#13740#0" expanded="true" />
-            <element signature="e#13925#13956#0" expanded="true" />
-            <element signature="e#14457#14488#0" expanded="true" />
-            <element signature="e#14545#14578#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/database/sqlite/SQLiteDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2547">
-          <caret line="1340" column="16" selection-start-line="1340" selection-start-column="16" selection-end-line="1340" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/DbHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="50" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/NotificationManager2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#287#319#0" expanded="true" />
-            <element signature="e#1562#1597#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
@@ -941,31 +759,146 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/content/AsyncQueryHandler.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/NotificationManager2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="123" column="44" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="44" />
+        <state relative-caret-position="952">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/DbHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="50" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/database/sqlite/SQLiteDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21811">
+          <caret line="1340" column="16" selection-start-line="1340" selection-start-column="16" selection-end-line="1340" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/Edit_Note.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3366">
+          <caret line="225" column="9" selection-start-line="225" selection-start-column="9" selection-end-line="225" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="476">
           <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/MainActivity.java">
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/content/AsyncQueryHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1467">
-          <caret line="344" column="6" selection-start-line="344" selection-start-column="6" selection-end-line="344" selection-end-column="6" />
+        <state relative-caret-position="1683">
+          <caret line="123" column="44" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/AppNotificationManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1547">
+          <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#16821#17204#0" expanded="true" />
-            <element signature="e#17109#17134#0" expanded="true" />
-            <element signature="e#17203#17204#0" expanded="true" />
-            <element signature="e#27993#27994#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/ReadCalendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#669#677#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="26487" selection-start-line="26487" selection-end-line="26487" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/CreateNote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-26/android/provider/CalendarContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="157" column="31" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/Utility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="58" column="66" selection-start-line="55" selection-start-column="11" selection-end-line="58" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#113#121#0" expanded="true" />
+            <element signature="e#187#195#0" expanded="true" />
+            <element signature="e#259#267#0" expanded="true" />
+            <element signature="e#335#343#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/CalendarProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1109#1110#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#4950#4951#0" expanded="true" />
+            <element signature="e#5011#5012#0" expanded="true" />
+            <element signature="e#5150#5151#0" expanded="true" />
+            <element signature="e#5205#5206#0" expanded="true" />
+            <element signature="e#5333#5334#0" expanded="true" />
+            <element signature="e#5394#5395#0" expanded="true" />
+            <element signature="e#5522#5523#0" expanded="true" />
+            <element signature="e#5583#5584#0" expanded="true" />
+            <element signature="e#5711#5712#0" expanded="true" />
+            <element signature="e#5772#5773#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/taskreminder/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="419" column="62" selection-start-line="419" selection-start-column="62" selection-end-line="419" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#31466#31467#0" expanded="true" />
           </folding>
         </state>
       </provider>

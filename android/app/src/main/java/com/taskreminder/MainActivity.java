@@ -31,6 +31,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.NotificationCompat;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -47,6 +48,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.HashSet;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
@@ -212,56 +214,56 @@ public class MainActivity extends AppCompatActivity
         activeTitleHome.setText(activeTitleText);
     }
 
-    @SuppressLint("MissingPermission")
-    private void get() {
+//    @SuppressLint("MissingPermission")
+//    private void get() {
 
 
 // Run query
-        Cursor cur = null;
-        ContentResolver cr = getContentResolver();
-        Uri uri = CalendarContract.Calendars.CONTENT_URI;
-        String selection = "((" + CalendarContract.Calendars.ACCOUNT_NAME + " = ?) AND ("
-                + CalendarContract.Calendars.ACCOUNT_TYPE + " = ?) AND ("
-                + CalendarContract.Calendars.OWNER_ACCOUNT + " = ?))";
-        String[] selectionArgs = new String[] {"didien.geonk@gmail.com", "didien.geonk@gmail.com",
-                "didien.geonk@gmail.com"};
-// Submit the query and get a Cursor object back.
-        cur = cr.query(uri, EVENT_PROJECTION, selection, selectionArgs, null);
+//        Cursor cur = null;
+//        ContentResolver cr = getContentResolver();
+//        Uri uri = CalendarContract.Calendars.CONTENT_URI;
+//        String selection = "((" + CalendarContract.Calendars.ACCOUNT_NAME + " = ?) AND ("
+//                + CalendarContract.Calendars.ACCOUNT_TYPE + " = ?) AND ("
+//                + CalendarContract.Calendars.OWNER_ACCOUNT + " = ?))";
+//        String[] selectionArgs = new String[] {"didien.geonk@gmail.com", "didien.geonk@gmail.com",
+//                "didien.geonk@gmail.com"};
+//// Submit the query and get a Cursor object back.
+//        cur = cr.query(uri, EVENT_PROJECTION, selection, selectionArgs, null);
+//
+//
+//
+//        Log.d("CUR", ">>>>>>>>>>>>> " + cur);
+//
+//        if(cur != null) {
+//            Log.d("CUR", ">>>>>>>>>>>>> ADA");
+//
+//
+//// Use the cursor to step through the returned records
+////                assert cur != null;
+//            while (cur.moveToNext()) {
+//                long calID = 0;
+//                String displayName = null;
+//                String accountName = null;
+//                String ownerName = null;
+//
+//                // Get the field values
+//                calID = cur.getLong(PROJECTION_ID_INDEX);
+//                displayName = cur.getString(PROJECTION_DISPLAY_NAME_INDEX);
+//                accountName = cur.getString(PROJECTION_ACCOUNT_NAME_INDEX);
+//                ownerName = cur.getString(PROJECTION_OWNER_ACCOUNT_INDEX);
+//
+//                // Do something with the values...
+//
+//                Log.d("CUR", ">>>>>>>>>>>>> " + accountName);
+////   ...
+//            }
+//
+//
+//        } else {
+//            Log.d("CUR", ">>>>>>>>>>>>> TIDAK ADA");
+//        }
 
-
-
-        Log.d("CUR", ">>>>>>>>>>>>> " + cur);
-
-        if(cur != null) {
-            Log.d("CUR", ">>>>>>>>>>>>> ADA");
-
-
-// Use the cursor to step through the returned records
-//                assert cur != null;
-            while (cur.moveToNext()) {
-                long calID = 0;
-                String displayName = null;
-                String accountName = null;
-                String ownerName = null;
-
-                // Get the field values
-                calID = cur.getLong(PROJECTION_ID_INDEX);
-                displayName = cur.getString(PROJECTION_DISPLAY_NAME_INDEX);
-                accountName = cur.getString(PROJECTION_ACCOUNT_NAME_INDEX);
-                ownerName = cur.getString(PROJECTION_OWNER_ACCOUNT_INDEX);
-
-                // Do something with the values...
-
-                Log.d("CUR", ">>>>>>>>>>>>> " + accountName);
-//   ...
-            }
-
-
-        } else {
-            Log.d("CUR", ">>>>>>>>>>>>> TIDAK ADA");
-        }
-
-    }
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -280,7 +282,7 @@ public class MainActivity extends AppCompatActivity
         notificationManager.hideNotification(getIntent());
 
 
-        cont = (LinearLayout) findViewById(R.id.cont);
+//        cont = (LinearLayout) findViewById(R.id.cont);
 
         activeTitleHome = (TextView) findViewById(R.id.active_title_tv);
         activeTitleHome.setText(activeTitleText);
@@ -291,8 +293,8 @@ public class MainActivity extends AppCompatActivity
             @SuppressLint({"NewApi", "MissingPermission"})
             @Override
             public void onClick(View view) {
-//                Intent openCreateNote = new Intent(MainActivity.this, CreateNote.class);
-//                startActivity(openCreateNote);
+                Intent openCreateNote = new Intent(MainActivity.this, CreateNote.class);
+                startActivity(openCreateNote);
 
 //                startAlarm(true, false);
 
@@ -342,7 +344,81 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
                 */
 
-get();
+//get();
+
+//                ReadCalendar.readCalendar(MainActivity.this);
+
+//                Utility.readCalendarEvent(MainActivity.this);
+
+
+//                // Run query
+//                Cursor cur = null;
+//                ContentResolver cr = getContentResolver();
+//                Uri uri = CalendarContract.Calendars.CONTENT_URI;
+//                String selection = "((" + CalendarContract.Calendars.ACCOUNT_NAME + " = ?) AND ("
+//                        + CalendarContract.Calendars.ACCOUNT_TYPE + " = ?) AND ("
+//                        + CalendarContract.Calendars.OWNER_ACCOUNT + " = ?))";
+//                String[] selectionArgs = new String[] {"didien.geonk@gmail.com", "com.gmail",
+//                        "didien.geonk@gmail.com"};
+//// Submit the query and get a Cursor object back.
+//                cur = cr.query(uri, EVENT_PROJECTION, selection, selectionArgs, null);
+//
+//// Use the cursor to step through the returned records
+//                while (cur.moveToNext()) {
+//                    long calID = 0;
+//                    String displayName = null;
+//                    String accountName = null;
+//                    String ownerName = null;
+//
+//                    // Get the field values
+//                    calID = cur.getLong(PROJECTION_ID_INDEX);
+//                    displayName = cur.getString(PROJECTION_DISPLAY_NAME_INDEX);
+//                    accountName = cur.getString(PROJECTION_ACCOUNT_NAME_INDEX);
+//                    ownerName = cur.getString(PROJECTION_OWNER_ACCOUNT_INDEX);
+//
+//                    // Do something with the values...
+//
+//                    Log.d("CAL", ">>>>>>>>>>>>>> calID "+calID);
+//                    Log.d("CAL", ">>>>>>>>>>>>>> displayName "+displayName);
+//                    Log.d("CAL", ">>>>>>>>>>>>>> accountName "+accountName);
+//                    Log.d("CAL", ">>>>>>>>>>>>>> ownerName "+ownerName);
+//
+////   ...
+//                }
+//
+//                cur.close();
+
+
+//                long calID = 3;
+//                long startMillis = 0;
+//                long endMillis = 0;
+//                Calendar beginTime = Calendar.getInstance();
+//                beginTime.set(2012, 9, 14, 7, 30);
+//                startMillis = beginTime.getTimeInMillis();
+//                Calendar endTime = Calendar.getInstance();
+//                endTime.set(2012, 9, 14, 8, 45);
+//                endMillis = endTime.getTimeInMillis();
+////...
+//
+//                ContentResolver cr = getContentResolver();
+//                ContentValues values = new ContentValues();
+//                values.put(CalendarContract.Events.DTSTART, startMillis);
+//                values.put(CalendarContract.Events.DTEND, endMillis);
+//                values.put(CalendarContract.Events.TITLE, "Jazzercise");
+//                values.put(CalendarContract.Events.DESCRIPTION, "Group workout");
+//                values.put(CalendarContract.Events.CALENDAR_ID, calID);
+//                values.put(CalendarContract.Events.EVENT_TIMEZONE, "America/Los_Angeles");
+//                Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
+//
+//// get the event ID that is the last element in the Uri
+//                long eventID = Long.parseLong(uri.getLastPathSegment());
+////
+//// ... do something with event ID
+////
+////
+//
+//                Log.d("CAL", ">>>>>>>>>>>>>> eventID "+eventID);
+
 
 
 
@@ -547,6 +623,8 @@ when the alarm is triggered
 
 
     }
+
+
 
 
 //    public void addInstance(View view) {
